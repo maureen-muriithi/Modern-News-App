@@ -14,13 +14,30 @@
     {% endif %}
 </head>
 <body>
+    <!-- Styles block -->
+    {% block styles%}
+        {{ super() }}
+        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    {% endblock %}
+
     {% block content %}
+
+    <!-- Search button section -->
+    <div class="container">
+        <form>
+            <input type="text" name="article_query" placeholder="Search for an Article" class="form-control">
+            <input type="submit"  value="Submit" class="btn btn-default">
+        </form>
+    
+    </div>
+
         <h1>{{ heading }}</h1>
         <!-- Popular news section  -->
         <h3> Top Headlines in U.S</h3>
         <ul>
             {{ macro.displayNewsList(us)}}
         </ul>
+        <br>
         <h3>Top Headlines in Germany</h3>
         <ul>
             {{ macro.displayNewsList(de)}}
