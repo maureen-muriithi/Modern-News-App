@@ -1,20 +1,60 @@
+
+body{
+    background-color: aqua;
+    color: black;
+    background-attachment: fixed;
+}
+
 .img-responsive{
- justify-items: center;
- padding: 4px;
- width: 200px;
- height: 200px;
-}    
+    justify-items: center;
+    padding: 4px;
+    width: 600px;
+    height: 600px;
+} 
+
+.article-card{
+    min-block-size: 1000px;
+    min-height: 1000px;
+}
 
 h3{
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
     font-weight: 500;
+    font-size: xx-large;
     color: blue;
+    margin-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1{
     color: black;
-    font-weight: 800;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
+}
+
+.description{
+    color:black;
+    font-size: x-large;
+}
+.title{
+    color: blue;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-item{
+    justify-content: end;
+    justify-items: end;
+    align-items: flex-end;
+    text-align: end;
+    justify-items: right;
+}
+
+.btn{
+    align-items: center;
+    justify-items: center;
+    place-items: center;
 }

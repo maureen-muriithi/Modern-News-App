@@ -2,11 +2,19 @@ from app import app
 
 class News:
 
-    def __init__(self,name,author,title, image, url, publishedAt):
+    def __init__(self, id, name, author,title, description, url, image, publishedAt, content):
+        self.id = id
         self.name = name
-        self.title = title
         self.author = author
+        self.title = title
+        self.description = description
         self.url = url
         self.image = image
         self.publishedAt = publishedAt
+        self.content = content
+        
+        
+        
+        
+        
         

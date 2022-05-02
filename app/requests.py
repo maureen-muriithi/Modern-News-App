@@ -1,3 +1,4 @@
+
 from app import app
 import urllib.request, json
 from .models import news
@@ -31,21 +32,23 @@ def process_results(news_list):
     
     news_results = []
     for news_item in news_list:
+        id = news_item.get('id')
         name = news_item.get('name')
-        description = news_item.get('description')
-        title = news_item.get('title')
         author = news_item.get('author')
-        image = news_item.get('urlToImage')
+        title = news_item.get('title')
+        description = news_item.get('description')
         url = news_item.get('url')
+        image = news_item.get('urlToImage')
         publishedAt = news_item.get('publishedAt')
-
+        content = news_item.get('content')
+        
         if image:
-            news_object = News(name,title,author,image,url,publishedAt)
+            news_object = News(id, name, author, title, description, url, image, publishedAt, content)
             news_results.append(news_object)
     return news_results
 
-def get_article(id):
-    get_article_details_url = base_url.format(id,api_key)
+def get_article(news_name):
+    get_article_details_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(news_name, api_key)
 
     with urllib.request.urlopen(get_article_details_url) as url:
         article_details_data = url.read()
@@ -55,14 +58,16 @@ def get_article(id):
 
         if article_details_response:
             id = article_details_response.get('id')
-            description = article_details_response.get('description')
-            title = article_details_response.get('title')
+            name = article_details_response.get('name')
             author = article_details_response.get('author')
-            image = article_details_response.get('urlToImage')
+            title = article_details_response.get('title')
+            description = article_details_response.get('description')
             url = article_details_response.get('url')
+            image = article_details_response.get('urlToImage')
             publishedAt = article_details_response.get('publishedAt')
-
-            news_object = News(id,description,title,author,image,url,publishedAt)
+            content = article_details_response.get('content')
+            
+            news_object = News(id, name, author, title, description, url, image, publishedAt, content)
 
     return news_object
 

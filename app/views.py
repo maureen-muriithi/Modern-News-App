@@ -19,14 +19,15 @@ def index():
     else:
         return render_template('index.html', title = title, heading = heading, us = us_news, de = de_news)
 
-@app.route('/news/<id>')
-def news(id):
+@app.route('/news/article/<news_name>')
+def news (news_name):
     
     #Getting articles
-    article = get_article(id)
-    title = f'{news.title}'
+    article = get_article(news_name)
+    title = f'{news_name}'
 
     return render_template('news.html',title = title, article = article)
+
 
 @app.route('/search/<news_title>')
 def search(news_title):

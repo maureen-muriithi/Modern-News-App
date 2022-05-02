@@ -22,26 +22,31 @@
 
     {% block content %}
 
+    <h1>{{ heading }}</h1>
+
     <!-- Search button section -->
-    <div class="container">
+    <div class="container-fluid">
         <form>
             <input type="text" name="article_query" placeholder="Search for an Article" class="form-control">
             <input type="submit"  value="Submit" class="btn btn-default">
         </form>
     
     </div>
-
-        <h1>{{ heading }}</h1>
+    
+    <div class="container-fluid">
         <!-- Popular news section  -->
-        <h3> Top Headlines in U.S</h3>
+        <h3 class="text-center"> TOP HEADLINES in U.S</h3>
         <ul>
             {{ macro.displayNewsList(us)}}
         </ul>
         <br>
-        <h3>Top Headlines in Germany</h3>
+        <h3 class="text-center">TOP HEADLINES in GERMANY</h3>
         <ul>
             {{ macro.displayNewsList(de)}}
         </ul>
+    </div>
+        
+        
     {% endblock %}
 </body>
 </html>

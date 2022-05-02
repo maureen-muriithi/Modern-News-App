@@ -2,12 +2,24 @@
 {% macro displayNewsList(news_list) %}
 
     {% for news in news_list %}
-        <div class="col-xs-12 col-md-4 col-md-2 col-md-2 article-card">
-            <img src="{{ news.image }}" alt="{{ news.title }}" class="img-responsive">
-            <li class="text-center">
-                <a href="/news/{{news.id}}">
-                    {{ news.author}}</a>
-            </li>
+        <div class=" col-md-6 article-card">
+            <img src="{{ news.image }}" alt="{{ news.name }}" class="img-responsive">
+            <br><br>
+            <p class=" title text-center">
+                <a href="{{ news.url }}">
+                    {{ news.title }}
+                </a>
+                <br>
+                {{ news.author}}, {{news.publishedAt}}
+            </p>
+            <br>
+            <p class="description text-center">
+                {{news.description}}
+            </p>
+            <h4 class="text-center" style="color: blue; font-size: x-large; font-style: italic; text-decoration: underline;"><a href="{{ news.url }}">
+                Read Full Article
+            </a></h4>
+
         </div>
 
     {% endfor %}
