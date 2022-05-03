@@ -2,10 +2,11 @@
 {% import 'macros.html' as macro %}
 
 {% block content %}
-    <div class="container">
+    <div class="container-fluid" style="background-color: aqua; font-size: 40px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">
         <div class="row">
-            <h3> There are {{ news| count}}  matches </h3>
-            <hr>
+            <h3 class="text-center"> There are {{ news| count}}  matches </h3>
+            <hr style="background-color: blue; height: 5px; width: 1100px;">
+            <h3 class="text-center" style="color: blue; font-size: 30px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Search Results</h3>
             <ul>
                 {{ macro.displayNewsList(news)}}
             </ul>

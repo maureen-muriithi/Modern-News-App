@@ -18,7 +18,7 @@ def index():
     search_article = request.args.get('article_query')
 
     if search_article:
-        return redirect(url_for('.index')('search',news_title=search_article))
+        return redirect(url_for('main.search',news_title=search_article))
     else:
         return render_template('index.html', title = title, heading = heading, us = us_news, de = de_news, za = za_news)
 
