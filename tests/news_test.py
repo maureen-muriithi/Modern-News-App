@@ -1,4 +1,3 @@
-
 import unittest
 from models import news
 
