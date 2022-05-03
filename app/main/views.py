@@ -1,8 +1,9 @@
-from app import app
-from flask import render_template, redirect, request, url_for
-from .requests import get_news, get_article, search_article
 
-@app.route ('/')
+from flask import render_template, redirect, request, url_for
+from . import main
+from ..requests import get_news, get_article, search_article
+
+@main.route ('/')
 def index():
 
     # Getting popular news
@@ -17,11 +18,11 @@ def index():
     search_article = request.args.get('article_query')
 
     if search_article:
-        return redirect(url_for('search',news_title=search_article))
+        return redirect(url_for('.index')('search',news_title=search_article))
     else:
         return render_template('index.html', title = title, heading = heading, us = us_news, de = de_news, za = za_news)
 
-@app.route('/news/article/<news_name>')
+@main.route('/news/article/<news_name>')
 def news (news_name):
     
     #Getting articles
@@ -31,7 +32,7 @@ def news (news_name):
     return render_template('news.html',title = title, article = article)
 
 
-@app.route('/search/<news_title>')
+@main.route('/search/<news_title>')
 def search(news_title):
 
     #searching for an article
