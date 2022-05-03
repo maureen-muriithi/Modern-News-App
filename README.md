@@ -1,7 +1,7 @@
 ### Modern News List
 
 > An application that will help them list and preview news articles from various sources.  
-> Live demo [ ]
+> Live demo [ https://modern-news-app.herokuapp.com/ ]
 
 ### Project Contributor
 
