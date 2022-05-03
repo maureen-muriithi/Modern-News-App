@@ -8,6 +8,8 @@ def index():
     # Getting popular news
     us_news = get_news('us')
     de_news = get_news('de')
+    za_news = get_news('za')
+
     
     title = 'Home page for the News App'
     heading = "Welcome to your Favorite Modern News App"
@@ -17,7 +19,7 @@ def index():
     if search_article:
         return redirect(url_for('search',news_title=search_article))
     else:
-        return render_template('index.html', title = title, heading = heading, us = us_news, de = de_news)
+        return render_template('index.html', title = title, heading = heading, us = us_news, de = de_news, za = za_news)
 
 @app.route('/news/article/<news_name>')
 def news (news_name):

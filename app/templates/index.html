@@ -21,9 +21,9 @@
     {% endblock %}
 
     {% block content %}
-
+    <br>
     <h1>{{ heading }}</h1>
-
+    <br>
     <!-- Search button section -->
     <div class="container-fluid">
         <form style="padding-left: 200px; padding-right: 200px;" >
@@ -32,17 +32,31 @@
         </form>
     
     </div>
+    <br>
+    <hr style="background-color: blue; height: 5px; width: 1100px;">
+    <br> <br>
+    <div class="sources">
+        <h4> <a href="#SA" style="font-style: italic;"> TOP HEADLINES - SOUTH AFRICA </a> </h4>
+        <h4> <a href="#States" style="font-style: italic;" > TOP HEADLINES - U.S </a> </h4>
+        <h4> <a href="#Germany" style="font-style: italic;" > TOP HEADLINES - GERMANY </a> </h4>
+    </div>
+
     
     <div class="container-fluid">
         <!-- Popular news section  -->
-        <h3 class="text-center"> TOP HEADLINES in U.S</h3>
-        <ul>
+        <h3 class="text-center">TOP HEADLINES IN U.S</h3>
+        <ul id="States"  >
             {{ macro.displayNewsList(us)}}
         </ul>
         <br>
-        <h3 class="text-center">TOP HEADLINES in GERMANY</h3>
-        <ul>
-            {{ macro.displayNewsList(de)}}
+        <h3 class="text-center">TOP HEADLINES IN GERMANY</h3>
+        <ul id="Germany" >
+            {{ macro.displayNewsList(de) }}
+        </ul>
+        <br>
+        <h3 class="text-center">TOP HEADLINES IN SOUTH AFRICA</h3>
+        <ul id="SA" >
+            {{ macro.displayNewsList(za) }}
         </ul>
     </div>
         

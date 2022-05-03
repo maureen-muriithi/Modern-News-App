@@ -21,16 +21,31 @@ h3{
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
+    justify-content: center;
+    justify-items: center;
+    align-self: center;
     font-weight: 500;
-    font-size: xx-large;
+    font-size: 40px;
     color: blue;
     margin-top: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+h4{
+    padding-left: 70px;
+    padding-top: 10p;
+    font-weight: 500;
+    font-size: x-large;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
 
 h1{
     color: black;
     font-weight: 500;
+    font-size: 70px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
 }
