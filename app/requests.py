@@ -1,5 +1,6 @@
+from unicodedata import category
 import urllib.request, json
-from .models import News
+from .models import News, Source
 
 # Getting api key
 api_key = None
@@ -7,10 +8,14 @@ api_key = None
 # Getting the movie base url
 base_url = None
 
+# Getting the sources url
+source_url = None
+
 def configure_request(app):
     global api_key,base_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
+    source_url = app.config['SOURCES_API_URL']
 
 
 def get_news(country):
@@ -74,6 +79,38 @@ def get_article(news_name):
             news_object = News(id, name, author, title, description, url, image, publishedAt, content)
 
     return news_object
+
+def get_article_sources():
+    get_article_details_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'.format(api_key)
+
+    with urllib.request.urlopen(get_article_details_url) as url:
+         article_details_data = url.read()
+         article_details_response = json.loads(article_details_data)
+
+         article_object = None
+         if article_details_response['sources']:
+             source_name = article_details_response['sources']
+             source_results = process_source_results(source_name)
+             
+
+    return source_results
+
+
+def process_source_results(sources):
+    source_results = []
+
+    for source in sources:
+        id = source.get('id')
+        name = source.get('name')
+        category = source.get('category')
+        description = source.get('description')
+        url = source.get('url')
+        country = source.get('country')
+        
+        source_object = Source(id, name, category, description, url, country)
+        source_results.append(source_object)
+
+    return source_results
 
 def search_article(news_title):
     search_article_url = 'https://newsapi.org/v2/everything?q={}&apiKey={}'.format(news_title, api_key)

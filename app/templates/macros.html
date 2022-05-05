@@ -25,3 +25,25 @@
     {% endfor %}
 
 {% endmacro %}
+
+{% macro displaySourcesList(sources) %}
+
+    {% for source in sources %}
+            <div class=" col-md-6 source-card">
+                <p class="description text-center">
+                    {{source.description}}
+                </p>
+                <p class=" title text-center"> Source: {{ source.name }}</p>
+                <p class=" title text-center"> Category: {{ source.category}}</p>
+                <p class=" title text-center"> Country: {{ source.country }}</p>                
+                <br>
+                <P class="text-center" style="color: blue; font-size: x-large; font-style: italic; text-decoration: underline;"><a href="{{ source.url }}">
+                    Read Full Article
+                </a></P>
+                <br> <br>
+            </div>
+        
+
+    {% endfor %}
+
+{% endmacro %}

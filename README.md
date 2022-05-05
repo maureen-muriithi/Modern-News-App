@@ -19,7 +19,7 @@
 
 #### Screenshot
 This is a snapshot of how the app works.
-[![Screenshot-from-2022-05-04-02-50-56.png](https://i.postimg.cc/J0Pvc7nw/Screenshot-from-2022-05-04-02-50-56.png)](https://postimg.cc/sGGT3r7K)
+[![Screenshot-from-2022-05-05-16-56-21.png](https://i.postimg.cc/k4hq8WVv/Screenshot-from-2022-05-05-16-56-21.png)](https://postimg.cc/k680P6v2)
 
 #### General Information
 In context, most people are busy workers and they get home really late. They always miss the news and they are very frustrated since they can't keep up with current affairs. To remedy this problem, this application will help them list and preview news articles from various sources.   

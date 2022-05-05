@@ -17,6 +17,13 @@ body{
     min-height: 1000px;
 }
 
+.source-card{
+    min-block-size: 200px;
+    min-height: 200px;
+    background-color: gray;
+}
+
+
 h3{
     padding-top: 5px;
     padding-bottom: 5px;
